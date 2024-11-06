@@ -38,3 +38,6 @@ Durante el desarrollo del proyecto, se identificaron algunas buenas prácticas y
 - Optimizar Imágenes usando el componente <Image /> de Next.js para mejorar el rendimiento y la carga de la página.
 - Usar key en Listas de Componentes en React, lo que ayuda a identificar cada elemento de manera única y mejora la eficiencia del renderizado.
 - Configurar Dominios Externos en next.config.js para permitir la carga de imágenes desde fuentes externas de forma segura.
+
+in process : https://6ta-tarea-react-next-js.vercel.app/
+  

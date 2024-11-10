@@ -8,11 +8,11 @@ const productos = shoppingInitialState.products;
     return (
     <>
     <div className={styles.container}>
-    <div className={styles.cardContainer}>
+        <div>
             <div className={styles.card}>
-            {
-             productos.map(producto => <Card key={producto.id} producto={producto} addToCart={addToCart}/>)
-            }
+             {
+              productos.map(producto => <Card key={producto.id} producto={producto} addToCart={addToCart}/>)
+             }
             </div>
         </div>    
     </div> 

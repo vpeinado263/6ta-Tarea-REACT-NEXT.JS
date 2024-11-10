@@ -1,13 +1,9 @@
 .container {
             
-background-color: chocolate;   
+background-color: rgb(5, 5, 5); 
+ 
 }
-.cardContainer {
-            
-    
-    padding: 16px; 
-    
-}
+
 .card {
     background-color: crimson;
 }

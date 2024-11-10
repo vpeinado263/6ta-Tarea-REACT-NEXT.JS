@@ -1,7 +1,7 @@
 import { TYPES } from "../actions/actions";
-import shoppingInitialState from "../reducer/shoppingInitialState";
 
-export function shoppingReducer(state = shoppingInitialState, action) {
+
+export function shoppingReducer(state, action) {
      switch (action.type) {
         case TYPES.READ_STATE: {
             return {
@@ -75,7 +75,7 @@ export function shoppingReducer(state = shoppingInitialState, action) {
                 cart: [] 
               };
         }
-        
+
         default:
             return state;
      }

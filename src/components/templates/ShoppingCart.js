@@ -1,17 +1,19 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import axios from "axios";
 import { TYPES } from "../../actions/actions";
 import { shoppingReducer } from "../../reducer/shoppingReducer";
 import { shoppingInitialState } from "../../reducer/shoppingInitialState";
-import CardContainer from "../organisms/CardsContainer";
-import CartItem from "../molecules/CardItem";
 import styles from "@/styles/ShoppingCart.module.css";
+import Product from "../organisms/Product";
+import CartItem from "../molecules/CardItem";
+
 
 const ShoppingCart = () => {
+  
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
   // Destructurar
-  const { cart } = state;
+  const {products, cart} = state;
 
   const updateState = async () => {
     const ENDPOINTS = {
@@ -30,6 +32,10 @@ const ShoppingCart = () => {
     cart: cartItems
    }})
   }
+
+  useEffect(() => {
+    updateState()
+  }, [])
 
   const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
 
@@ -51,7 +57,7 @@ const ShoppingCart = () => {
       <div className={styles.shoppingContainer}>
         <h3 className={styles.productsTitle}>Productos</h3>
         
-        <CardContainer addToCart={addToCart} />
+        <Product addToCart={addToCart} />
     
         <h3 className={styles.shoppingTitle}>Carrito</h3>
         

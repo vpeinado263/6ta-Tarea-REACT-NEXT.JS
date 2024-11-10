@@ -7,8 +7,6 @@ import styles from "@/styles/ShoppingCart.module.css";
 import CartItem from "../molecules/CardItem";
 import Product from "../organisms/Product";
 
-
-
 const ShoppingCart = () => {
   
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
@@ -37,16 +35,6 @@ const ShoppingCart = () => {
   useEffect(() => {
     updateState()
   }, [])
-
-
-
-
-
-
-
-
-
-
 
   const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id});
   const deleteFromCart = (id, all = false) => {

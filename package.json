@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "apifake": "json-server --watch src/assets/db.json"
+    "apifake": "json-server --port 5000 --watch src/assets/db.json"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3",

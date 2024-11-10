@@ -1,9 +1,11 @@
+
+
 const Button = ({bgcolor, ccolor, addToCart, id}) => {
     return(
         <>
-         <button onClick={() => addToCart(id)}>Agregar al carrito</button>
+         <button className="buttonCard" onClick={() => addToCart(id)}>Agregar al carrito</button>
         <style jsx>{`
-            button {
+            .buttonCard {
                 color: ${!ccolor ? "white" : ccolor};
                 background-color: ${bgcolor};
                 border: none;
@@ -14,7 +16,7 @@ const Button = ({bgcolor, ccolor, addToCart, id}) => {
                 transition: 0.3s;
                 margin: auto;
             }       
-            button:hover {
+            .buttonCard:hover {
                 transform: translateY(2px);
                 box-shadow: none;
                 background-color: rgb(41, 104, 200);

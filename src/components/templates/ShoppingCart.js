@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import axios from "axios";
 import { TYPES } from "../../actions/actions";
 import { shoppingReducer } from "../../reducer/shoppingReducer";
 import { shoppingInitialState } from "../../reducer/shoppingInitialState";
@@ -11,6 +12,24 @@ const ShoppingCart = () => {
 
   // Destructurar
   const { cart } = state;
+
+  const updateState = async () => {
+    const ENDPOINTS = {
+      products: "http://localhost:5000/products",
+      cart: "http://localhost:5000/cart"
+    }
+
+  const resProducts = await axios.get(ENDPOINTS.products),
+   resCart = await axios.get(ENDPOINTS.cart);
+
+  const productsList = await resProducts.data,
+   cartItems = await resCart.data;
+
+   dispatch({type: TYPES.READ_STATE, payload: {
+    products: productsList,
+    cart: cartItems
+   }})
+  }
 
   const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
 

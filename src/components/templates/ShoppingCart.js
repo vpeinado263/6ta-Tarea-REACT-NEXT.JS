@@ -26,29 +26,28 @@ const ShoppingCart = () => {
 
   return (
     <>
-    <div className={styles.container}>
-    <div className={styles.shoppingContainer}>
+     <div className={styles.container}>
       <h2 className={styles.shoppingTitle}>Carrito de Compras</h2>
-      <h3 className={styles.productsTitle}>Productos</h3>
-
-      <div className={styles.gridResponsive}>
+      
+      <div className={styles.shoppingContainer}>
+        <h3 className={styles.productsTitle}>Productos</h3>
+        
         <CardContainer addToCart={addToCart} />
+    
+        <h3 className={styles.shoppingTitle}>Carrito</h3>
+        
+         <div className={styles.box}>
+          {cart.length > 0 ? (
+             cart.map((item) => (
+              <CartItem key={item.id} item={item} deleteFromCart={deleteFromCart} />
+          ))
+          ) : (
+            <p className={styles.mensaje}>carrito vacío</p>
+          )}
+         </div>
+
+         <button className={styles.clearButton} onClick={clearCart}>Limpiar carrito</button>
       </div>
-
-      <h3 className={styles.shoppingTitle}>Carrito</h3>
-
-      <div className={styles.box}>
-        {cart.length > 0 ? (
-          cart.map((item) => (
-            <CartItem key={item.id} item={item} deleteFromCart={deleteFromCart} />
-        ))
-        ) : (
-          <p className={styles.mensaje}>carrito vacío</p>
-       )}
-      </div>
-
-      <button className={styles.clearButton} onClick={clearCart}>Limpiar carrito</button>
-    </div>
     </div>
     </>
   );

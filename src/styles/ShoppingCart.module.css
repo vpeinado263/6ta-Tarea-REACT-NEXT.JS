@@ -1,56 +1,46 @@
 .container {
-    background-color: darkgray;
+    background-color: rgb(159, 16, 16);
+    width: 100%;
 }
 .shoppingContainer {
-    
-    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    max-width: 90%;
     margin: 0 auto;
     background-color: rgb(215, 244, 22);  
 }
 .shoppingTitle {
     text-align: center;
-  
-background-color: cadetblue;
-    
+    background-color: cadetblue;
 }
-.productsTitle, .cartTitle {
-    margin: 20px 0 10px;
-    font-size: 1.5rem; 
-    color: #333; 
-
-}
-.gridResponsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-   
-}
-.mensaje {
-    text-align: center;
-    color: #777;
-    font-style: italic;
-  }
-  .box {
+.box {
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
- 
+    width: 18rem;
      background-color: rgb(237, 0, 237);   
   }
-  .clearButton {
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 20px; 
+.mensaje {
+    text-align: center;
+    color: #050404;
+    font-style: italic;
+  }
+.clearButton {
     background-color: #dc3545; 
     color: white; 
     border: none; 
     border-radius: 5px; 
+    height: 2rem;
     cursor: pointer; 
     transition: background-color 0.3s; 
 }
 .clearButton:hover {
     background-color: #c82333; 
 }
+
+
+
+ 

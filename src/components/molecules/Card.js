@@ -1,5 +1,6 @@
 import Button from "../atoms/Button";
 import styles from "@/styles/Card.module.css";
+import Image from "next/image";
 
 const Card = ({producto, addToCart}) => {
     const { id, title, text, img, price,  bgcolor, ccolor} = producto;
@@ -9,7 +10,7 @@ const Card = ({producto, addToCart}) => {
         <div className={styles.containerCard}>
              <figure className={styles.productCard}>
             <h5 className={styles.productPrice}>$ {price}</h5>
-            <img className={styles.productImage} src={img} alt={title}/>
+            <Image src={img} alt={title} width={270} height={200} className={styles.productImage}/>
             <figcaption>
                 <h3 className={styles.productTitle}>{title}</h3>
             </figcaption>

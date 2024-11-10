@@ -21,7 +21,6 @@
             
 }
 .img {
-            width: 150px;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(117, 52, 52, 0.1);
@@ -37,12 +36,12 @@
             display: flex;
             gap: 10px;
             justify-content: center;
-            margin-top: 10px;         
+            margin-top: 10px;
+           
 }
-
 .carditembutton {
             padding: 8px 16px;
-            background-color: rgb(114, 103, 121); 
+            background-color: rgb(217, 170, 247); 
             color: white;
             border: none;
             border-radius: 5px;

@@ -4,8 +4,9 @@ import { TYPES } from "../../actions/actions";
 import { shoppingReducer } from "../../reducer/shoppingReducer";
 import { shoppingInitialState } from "../../reducer/shoppingInitialState";
 import styles from "@/styles/ShoppingCart.module.css";
-import Product from "../organisms/Product";
 import CartItem from "../molecules/CardItem";
+import Product from "../organisms/Product";
+
 
 
 const ShoppingCart = () => {
@@ -19,7 +20,7 @@ const ShoppingCart = () => {
     const ENDPOINTS = {
       products: "http://localhost:5000/products",
       cart: "http://localhost:5000/cart"
-    }
+    };
 
   const resProducts = await axios.get(ENDPOINTS.products),
    resCart = await axios.get(ENDPOINTS.cart);
@@ -37,8 +38,17 @@ const ShoppingCart = () => {
     updateState()
   }, [])
 
-  const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
 
+
+
+
+
+
+
+
+
+
+  const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id});
   const deleteFromCart = (id, all = false) => {
     if (all) {
       dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: id });
@@ -46,7 +56,6 @@ const ShoppingCart = () => {
       dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: id });
     }
   };
-
   const clearCart = () => dispatch({ type: TYPES.CLEAR_CART });
 
   return (

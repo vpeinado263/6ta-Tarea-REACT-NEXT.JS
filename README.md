@@ -39,5 +39,5 @@ Durante el desarrollo del proyecto, se identificaron algunas buenas prácticas y
 - Usar key en Listas de Componentes en React, lo que ayuda a identificar cada elemento de manera única y mejora la eficiencia del renderizado.
 - Configurar Dominios Externos en next.config.js para permitir la carga de imágenes desde fuentes externas de forma segura.
 
-in process : https://6ta-tarea-react-next-js.vercel.app/
+in process : https://6ta-tarea-react-next-cztbdlwug-vhp-projects-694c293c.vercel.app/
   

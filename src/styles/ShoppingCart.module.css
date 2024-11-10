@@ -1,5 +1,5 @@
 .container {
-    background-color: rgb(159, 16, 16);
+    background-color: transparent;
     width: 100%;
 }
 .shoppingContainer {
@@ -7,11 +7,11 @@
     flex-direction: row;
     max-width: 90%;
     margin: 0 auto;
-    background-color: rgb(215, 244, 22);  
+    background-color: transparent;  
 }
 .shoppingTitle {
     text-align: center;
-    background-color: cadetblue;
+    background-color: transparent;
 }
 .box {
     display: flex;
@@ -21,15 +21,17 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 18rem;
-     background-color: rgb(237, 0, 237);   
+     background-color: transparent;   
   }
+  
 .mensaje {
     text-align: center;
-    color: #050404;
+    color: #4c791f;
     font-style: italic;
   }
+
 .clearButton {
-    background-color: #dc3545; 
+    background-color: #e94a5a; 
     color: white; 
     border: none; 
     border-radius: 5px; 

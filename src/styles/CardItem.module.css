@@ -1,5 +1,5 @@
 .container {
-    background-color: rgb(63, 150, 13);
+    background-color: transparent;
 }
 .carditem {
             display: flex;
@@ -24,10 +24,10 @@
             width: 150px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(117, 52, 52, 0.1);
             overflow: hidden;
             transition: transform 0.2s ease;
-            background-color: #fff;
+            background-color: transparent;
             text-align: center;
         }
 .img:hover {
@@ -37,13 +37,12 @@
             display: flex;
             gap: 10px;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 10px;         
+}
 
-           
-        }
 .carditembutton {
             padding: 8px 16px;
-            background-color: rgb(217, 170, 247); 
+            background-color: rgb(114, 103, 121); 
             color: white;
             border: none;
             border-radius: 5px;
@@ -52,10 +51,10 @@
             transition: background-color 0.3s, transform 0.2s;
 }
 .carditembutton:hover {
-            background-color: #d32f2f; 
+            background-color: #ff1010; 
             transform: scale(1.05); 
         }
 .carditembutton:active {
-            background-color: #b71c1c; 
+            background-color: #b91919; 
             transform: scale(0.95); 
 }

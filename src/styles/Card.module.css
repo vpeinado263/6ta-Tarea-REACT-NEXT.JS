@@ -1,5 +1,5 @@
 .containerCard {
-    background-color: rgb(74, 193, 193);
+    background-color: transparent;
 }
 .productCard {
      display: flex;
@@ -12,7 +12,7 @@
      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
      transition: transform 0.2s;
 
-     background-color: blue;
+     background-color: transparent;
 }
  .productCard:hover {
             transform: scale(1.02);
@@ -24,26 +24,22 @@
             color: #333;
             margin: 10px 0;
 
-            background-color: #ddd;
+            background-color: transparent;
            
 }
 .productImage {
             width: 5rem;
             height: 5rem;
             border-radius: 8px; 
-              
-            background-color: brown;
 }
 .productTitle {
 font-size: 1.2rem;
 text-align: center;
 margin: 10px 0;   
 
-background-color: chartreuse;
 }
 .productDescription {
-    background-color: cornflowerblue;
-    color: rgb(150, 6, 121);
+    color: rgb(41, 13, 35);
     font-size: 1rem;
     text-align: center;
 }

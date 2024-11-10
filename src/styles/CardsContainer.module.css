@@ -1,9 +1,9 @@
 .container {
             
-background-color: rgb(5, 5, 5); 
+background-color: transparent; 
  
 }
 
 .card {
-    background-color: crimson;
+    background-color: transparent;
 }

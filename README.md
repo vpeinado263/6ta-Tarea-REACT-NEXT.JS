@@ -52,5 +52,5 @@ Optimizar imágenes: Utilicé el componente <Image /> de Next.js para mejorar el
 Usar key en listas de componentes en React: Esto ayuda a identificar de manera única cada elemento y mejora la eficiencia del renderizado.
 Configurar dominios externos en next.config.js: Esto permite cargar imágenes de fuentes externas de forma segura.
 Enlace al Proyecto
-Puedes ver el proyecto en vivo en el siguiente enlace: 
+Puedes ver el proyecto en vivo en el siguiente enlace: https://6ta-tarea-react-next-1e3yvlp76-vhp-projects-694c293c.vercel.app/
   

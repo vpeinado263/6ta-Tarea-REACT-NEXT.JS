@@ -5,38 +5,40 @@ import { shoppingReducer } from "../../reducer/shoppingReducer";
 import { shoppingInitialState } from "../../reducer/shoppingInitialState";
 import styles from "@/styles/ShoppingCart.module.css";
 import CartItem from "../molecules/CardItem";
-import Product from "../organisms/Product";
+import CardContainer from "../organisms/CardsContainer";
 
 const ShoppingCart = () => {
-  
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
   // Destructurar
-  const {products, cart} = state;
+  const { products, cart } = state;
 
   const updateState = async () => {
     const ENDPOINTS = {
       products: "http://localhost:5000/products",
-      cart: "http://localhost:5000/cart"
+      cart: "http://localhost:5000/cart",
     };
 
-  const resProducts = await axios.get(ENDPOINTS.products),
-   resCart = await axios.get(ENDPOINTS.cart);
+    const resProducts = await axios.get(ENDPOINTS.products),
+      resCart = await axios.get(ENDPOINTS.cart);
 
-  const productsList = await resProducts.data,
-   cartItems = await resCart.data;
+    const productsList = await resProducts.data,
+      cartItems = await resCart.data;
 
-   dispatch({type: TYPES.READ_STATE, payload: {
-    products: productsList,
-    cart: cartItems
-   }})
-  }
+    dispatch({
+      type: TYPES.READ_STATE,
+      payload: {
+        products: productsList,
+        cart: cartItems,
+      },
+    });
+  };
 
   useEffect(() => {
-    updateState()
-  }, [])
+    updateState();
+  }, []);
 
-  const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id});
+  const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
   const deleteFromCart = (id, all = false) => {
     if (all) {
       dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: id });
@@ -48,32 +50,36 @@ const ShoppingCart = () => {
 
   return (
     <>
-     <div className={styles.container}>
-      <h2 className={styles.shoppingTitle}>Carrito de Compras</h2>
-      
-      <div className={styles.shoppingContainer}>
-        <h3 className={styles.productsTitle}>Productos</h3>
-        
-        <Product addToCart={addToCart} />
-    
-        <h3 className={styles.shoppingTitle}>Carrito</h3>
-        
-         <div className={styles.box}>
-          {cart.length > 0 ? (
-             cart.map((item) => (
-              <CartItem key={item.id} item={item} deleteFromCart={deleteFromCart} />
-          ))
-          ) : (
-            <p className={styles.mensaje}>carrito vacío</p>
-          )}
-         </div>
+      <div className={styles.container}>
+        <h2 className={styles.shoppingTitle}>Carrito de Compras</h2>
 
-         <button className={styles.clearButton} onClick={clearCart}>Limpiar carrito</button>
+        <div className={styles.shoppingContainer}>
+          <h3 className={styles.productsTitle}>Productos</h3>
+
+          {/* Pasar `products` como prop a `CardContainer` */}
+          <CardContainer productos={products} addToCart={addToCart} />
+
+          <h3 className={styles.shoppingTitle}>Carrito</h3>
+
+          <div className={styles.box}>
+            {cart.length > 0 ? (
+              cart.map((item) => (
+                <CartItem key={item.id} item={item} deleteFromCart={deleteFromCart} />
+              ))
+            ) : (
+              <p className={styles.mensaje}>carrito vacío</p>
+            )}
+          </div>
+
+          <button className={styles.clearButton} onClick={clearCart}>
+            Limpiar carrito
+          </button>
+        </div>
       </div>
-    </div>
     </>
   );
 };
 
 export default ShoppingCart;
+
 

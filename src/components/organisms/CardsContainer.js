@@ -1,22 +1,22 @@
 import Card from "../molecules/Card";
-import { shoppingInitialState } from "@/reducer/shoppingInitialState";
 import styles from "@/styles/CardsContainer.module.css";
 
-const CardContainer = ({addToCart}) => {
-const productos = shoppingInitialState.products;
-
+const CardContainer = ({ productos, addToCart }) => {
     return (
-    <>
-    <div className={styles.container}>
-        <div>
-            <div className={styles.card}>
-             {
-              productos.map(producto => <Card key={producto.id} producto={producto} addToCart={addToCart}/>)
-             }
+        <div className={styles.container}>
+            <div>
+                <div className={styles.card}>
+                    {productos && productos.length > 0 ? (
+                        productos.map((producto) => (
+                            <Card key={producto.id} producto={producto} addToCart={addToCart} />
+                        ))
+                    ) : (
+                        <p>No hay productos disponibles</p>
+                    )}
+                </div>
             </div>
-        </div>    
-    </div> 
-    </>
-    )
-}
+        </div>
+    );
+};
+
 export default CardContainer;
